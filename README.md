@@ -6,7 +6,7 @@ Based on OpenZeppelin code:
 * Capped
 * Burnable
 
-We will use this token during the team building and pre-deployement phases of a DeFi project. The project team can use it as a simple form of non-transferrable DAO shares, and a social token.
+We will use this token during the team building and pre-deployement phases of a DeFi project. The project team can use it as a simple form of DAO shares, and a social token.
 
 The tokens can be used to unlock "token gated" and "social token" features. For example, the holder of a threshold number of these coins will get access to a private Discord for the project. They can vote on Snapshot. Later, the BuilderTokens can be replaced by functional tokens in a decentralized system.
 
