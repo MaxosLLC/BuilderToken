@@ -14,5 +14,5 @@ The tokens can be used to unlock "token gated" and "social token" features. For 
 * We will create a fixed number of tokens - often 10,000,000. 
 * We will transfer these to a team leader account - possibly a Gnosis safe. The leader should communicate a plan for allocating the tokens to contributors
 * The leader will give contributors token allocations.
-* During the team building phase, contributors cannot transfer to other wallets. Later, we can experiment with removing the pause and see if people want transfer or trade tokens.
+* During the team building phase, contributors cannot transfer to other wallets. Later, we can experiment with removing the pause and see if people want transfer tokens.
 * We can replace the BuilderTokens with functional tokens in a decentralized system. We can do this by automatically airdropping an equivalent number of functional tokens, or by asking BuilderToken holders to claim their functional tokens. In this process, we can move between chains. For example, we can do team building on a low-cost chain like Matic, and then issue functional tokens on the Ethereum main chain.
