@@ -1,5 +1,5 @@
 # BuilderToken
-Team-building ERC20 token. Transfers can be paused except distributions to team members.
+Team-building ERC20 token. Transfers can be paused except distributions to team members from an administrator's multisig wallet.
 
 Based on OpenZeppelin code:
 * Pausable. This function is modified to allow transfers from an admin address
