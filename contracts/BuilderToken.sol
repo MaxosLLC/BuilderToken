@@ -21,13 +21,15 @@ contract BuilderToken is ERC20, Ownable, Pausable{
     constructor(
     string memory _name,
     string memory _symbol,
+    address _dev,
     uint _supply
     )
     ERC20(_name, _symbol)
     Ownable()
     Pausable()
     {
-        _mint(owner(), _supply);
+        transferOwnership(_dev);
+        _mint(_dev, _supply);
     }
 
     /**
@@ -53,7 +55,12 @@ contract BuilderToken is ERC20, Ownable, Pausable{
     * @dev ERC20 transfer hook checks if token is paused OR if sender is owner. If owner it doesn't matter
      */
     function _beforeTokenTransfer(address from, address to, uint amount) internal override{
-        require(!paused() || msg.sender == owner(),"Only owner can transfer when paused");
+        require(
+            !paused() ||
+            from == owner() ||
+            to ==owner(),
+            "When paused transfers must be to/from owner"
+        );
     }
 
 }

@@ -1,3 +1,5 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider"); 
+const secrets = require("./secrets.json");
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -58,6 +60,19 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
+    kovan: {
+      provider: () => new HDWalletProvider(secrets.mnemonic, `wss://kovan.infura.io/ws/v3/` + secrets.infuraId),
+      network_id: 42,       // Kovan's id
+      networkCheckTimeout: 999999,
+      timeoutBlocks: 200,
+      gas: 5000000,
+      gasPrice: 25000000000
+      },
+      main: {
+        provider: () => new HDWalletProvider(secrets.mnemonic, `wss://mainnet.infura.io/ws/v3/` + secrets.infuraId),
+        network_id: 1,       // Mainnet's id
+  
+      }
     // ropsten: {
     // provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
     // network_id: 3,       // Ropsten's id
@@ -94,6 +109,12 @@ module.exports = {
     }
   },
 
+  plugins:[
+    'truffle-plugin-verify'
+  ],
+  api_keys:{
+    etherscan: secrets.etherscanAPIKey
+  },
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
   //
   // Note: if you migrated your contracts prior to enabling this field in your Truffle project and want
